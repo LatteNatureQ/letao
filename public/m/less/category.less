@@ -1,0 +1,119 @@
+@import 'base.less';
+body {
+    background-color: #e6e6e6;
+}
+
+/* 分类头部区域 */
+
+#header {
+    display: flex;
+    .icon {
+        display: flex;
+        width: .45rem;
+        height: .45rem;
+        color: #fff;
+        font-size: .25rem;
+        align-items: center;
+        justify-content: center;
+    }
+    form {
+        position: relative;
+        flex: 1;
+        height: 100%;
+        margin-top: 9px;
+        .search {
+            color: red;
+            top: -0.07rem;
+            right: 0;
+        }
+        input {
+            border-radius: 30px;
+            background-color: #fff;
+            font-size: .12rem;
+            height: .28rem;
+        }
+    }
+    .search1 {
+        display: flex;
+        width: .45rem;
+        height: .45rem;
+        color: #fff;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* 分类主体区域 */
+
+#main {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    .main-left {
+        position: relative;
+        width: .75rem;
+        height: 100%;
+        overflow: hidden; // float: left;
+        .main-ul,
+        .mui-scroll-wrapper,
+        .mui-scroll {
+            width: 100%;
+            height: 101%;
+        }
+    }
+    .main-ul,
+    .mui-scroll-wrapper,
+    .mui-scroll {
+        a {
+            color: black;
+            width: .75rem;
+            height: .5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            &.active {
+                background-color: #e6e6e6;
+                color: red;
+            }
+        }
+    }
+    li {
+        width: .75rem;
+    }
+    .main-right {
+        width: 100%;
+        padding: 10px 10px 0px;
+        flex-direction: column;
+        position: relative;
+        flex: 1;
+        .hot-brand {
+            height: 100%;
+        }
+    }
+    .category-right {
+        // height: 100%;
+        padding: 10px 10px 0px;
+        .category-img {
+            // height: 100%;
+            width: 100%;
+        }
+        .brand-img {
+            display: flex;
+            height: 100%;
+            padding-top: .1rem;
+            background-color: #fff;
+            flex-wrap: wrap;
+            a {
+                height: .66rem;
+                display: flex;
+                width: 33.3%;
+                justify-content: center;
+            }
+            img {
+                width: .66rem;
+                height: .66rem;
+            }
+        }
+    }
+}
