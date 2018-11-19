@@ -141,9 +141,9 @@ body {
   width: 100%;
   height: 101%;
 }
-#main .main-ul a,
-#main .mui-scroll-wrapper a,
-#main .mui-scroll a {
+#main .main-ul li a,
+#main .mui-scroll-wrapper li a,
+#main .mui-scroll li a {
   color: black;
   width: .75rem;
   height: .5rem;
@@ -152,9 +152,9 @@ body {
   justify-content: center;
   background-color: #fff;
 }
-#main .main-ul a.active,
-#main .mui-scroll-wrapper a.active,
-#main .mui-scroll a.active {
+#main .main-ul li.active a,
+#main .mui-scroll-wrapper li.active a,
+#main .mui-scroll li.active a {
   background-color: #e6e6e6;
   color: red;
 }

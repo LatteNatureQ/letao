@@ -1,0 +1,52 @@
+@import 'base.less';
+#header {
+    display: flex;
+    .icon {
+        display: flex;
+        width: .45rem;
+        height: .45rem;
+        color: #fff;
+        font-size: .25rem;
+        align-items: center;
+        justify-content: center;
+    }
+    p {
+        font-size: .18rem;
+        height: 100%;
+        flex: 1;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: -0.1rem;
+    }
+}
+
+#main {
+    .search {
+        padding: .15rem;
+        form {
+            display: flex;
+            input {
+                // border-radius: .12rem;
+                border: 1px solid red;
+                height: .3rem;
+            }
+            .btn-search {
+                height: .3rem;
+                background-color: red;
+                color: #fff;
+                border: 0;
+                margin-left: -0.02rem;
+            }
+        }
+    }
+    .mui-card {
+        span {
+            font-size: .14rem;
+        }
+        .search-remove {
+            font-size: .14rem;
+        }
+    }
+}

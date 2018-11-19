@@ -64,17 +64,21 @@ body {
     .main-ul,
     .mui-scroll-wrapper,
     .mui-scroll {
-        a {
-            color: black;
-            width: .75rem;
-            height: .5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #fff;
+        li {
+            a {
+                color: black;
+                width: .75rem;
+                height: .5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #fff;
+            }
             &.active {
-                background-color: #e6e6e6;
-                color: red;
+                a {
+                    background-color: #e6e6e6;
+                    color: red;
+                }
             }
         }
     }
