@@ -75,6 +75,9 @@ ul {
   justify-content: center;
   color: #fff;
 }
+#footer .footer-nav a.active {
+  color: #ffa500;
+}
 #footer .footer-nav a span {
   font-size: .12rem;
 }
@@ -153,4 +156,3 @@ ul {
   width: 50%;
   height: 2.35rem;
 }
-/* 底部区域 */

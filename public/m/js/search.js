@@ -1,7 +1,5 @@
 $(function () {
-    var letao = function (getItem) {
-        this.getItem = getItem;
-    };
+    var letao = function () {};
     letao.prototype = {
         /* 更新逻辑 */
         refresh: function () {
@@ -15,6 +13,7 @@ $(function () {
                 list: arr
             });
             $('.search-bottom').html(html);
+            return this;
         },
         /* 搜索逻辑 */
         search: function () {
@@ -40,7 +39,8 @@ $(function () {
                     list: arr
                 });
                 $('.search-bottom').html(html);
-            })
+            });
+            return this;
         },
         /* 清空逻辑 */
         clear: function () {
@@ -50,6 +50,7 @@ $(function () {
                     this.refresh();
                 }
             })
+            return this;
         },
         /* 单行删除逻辑 */
         del: function () {
@@ -61,11 +62,9 @@ $(function () {
                 localStorage.setItem('key', JSON.stringify(arr));
                 this.refresh();
             })
+            return this;
         }
     };
     var Letao = new letao();
-    Letao.refresh();
-    Letao.search();
-    Letao.clear();
-    Letao.del();
+    Letao.refresh().search().clear().del();
 })
