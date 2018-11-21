@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./less/productList.css">
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header id="header">
+        <a class="mui-icon mui-icon-arrowleft icon" href="javascript:history.back()"></a>
+        <p>搜索中心</p>
+    </header>
+    <main id="main">
+        <!-- 商品搜索 -->
+        <div class="search">
+            <form action="#">
+                <input class="search-text" type="text" placeholder="请输入商品名称">
+                <button type="button" class="mui-btn mui-btn-primary btn-search">搜索</button>
+            </form>
+        </div>
+        <!-- 商品搜索详情 -->
+        <div class="productList">
+            <p>上架时间
+                <i class="fa fa-angle-down"></i>
+            </p>
+            <p class="order" data-price='2'>价格
+                <i class="fa fa-angle-down"></i>
+            </p>
+            <p class="order" data-num='2'>销量
+                <i class="fa fa-angle-down"></i>
+            </p>
+            <p>折扣
+                <i class="fa fa-angle-down"></i>
+            </p>
+        </div>
+        <!-- 商品展示 -->
+        <div class="product-box">
+            <!--下拉刷新容器-->
+            <div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!--数据列表-->
+                    <ul class="mui-table-view mui-table-view-chevron">
+                        <div class="product-Pay">
+                            <div class="article ">
+                                <a href="#" class="ui-link">
+                                    <img src="./images/detail.jpg" alt="">
+                                    <p class="character">李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5球鞋</p>
+                                    <p class="price">
+                                        <span class="red">¥499.1</span>
+                                        <del class="del">¥888.1</del>
+                                    </p>
+                                    <button type="button" class="mui-btn mui-btn-primary product-buy">立即购买</button>
+                                </a>
+                            </div>
+                            <div class="article">
+                                <a href="#" class="ui-link">
+                                    <img src="./images/detail.jpg" alt="">
+                                    <p>李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5球鞋</p>
+                                    <p class="price">
+                                        <span class="red">¥499.1</span>
+                                        <del class="del">¥888.1</del>
+                                    </p>
+                                    <button type="button" class="mui-btn mui-btn-primary product-buy">立即购买</button>
+                                </a>
+                            </div>
+                            <div class="article">
+                                <a href="#" class="ui-link">
+                                    <img src="./images/detail.jpg" alt="">
+                                    <p>李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5球鞋</p>
+                                    <p class="price">
+                                        <span class="red">¥499.1</span>
+                                        <del class="del">¥888.1</del>
+                                    </p>
+                                    <button type="button" class="mui-btn mui-btn-primary product-buy">立即购买</button>
+                                </a>
+                            </div>
+                            <div class="article">
+                                <a href="#" class="ui-link">
+                                    <img src="./images/detail.jpg" alt="">
+                                    <p>李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5球鞋</p>
+                                    <p class="price">
+                                        <span class="red">¥499.1</span>
+                                        <del class="del">¥888.1</del>
+                                    </p>
+                                    <button type="button" class="mui-btn mui-btn-primary product-buy">立即购买</button>
+                                </a>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer id="footer">
+        <div class="footer-nav">
+            <a href="./index.html">
+                <img src="http://m.img.letao.com:80/picture//website/ff80808157ffc1c2015800534d4c0000/2018/f9c6394642b14ff5b19d84fdfba71b4b.png"
+                    alt="">
+                <span>首页</span>
+            </a>
+            <a href="./category.html">
+                <img src="http://m.img.letao.com:80/picture//website/ff80808157ffc1c2015800534d4c0000/2016/63126e837b424147b02d6d95d4106f5d.png"
+                    alt="">
+                <span>分类</span>
+            </a>
+            <a href="">
+                <img src="http://m.img.letao.com:80/picture//website/ff80808157ffc1c2015800534d4c0000/2016/2fb1c089cbd749e5ba6bec6cec625727.png"
+                    alt="">
+                <span>购物车</span>
+            </a>
+            <a href="">
+                <img src="http://m.img.letao.com:80/picture//website/ff80808157ffc1c2015800534d4c0000/2016/c3b424f1c55b469c88677cf70d6efe7a.png"
+                    alt="">
+                <span>会员中心</span>
+            </a>
+        </div>
+    </footer>
+
+    <script src="./lib/mui/js/mui.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script type="text/html" id="productTpl">
+        {{if data.length==0}}
+        <p>没有找到该商品,不如试试匡威</p>
+        {{else}} {{each data value }}
+        <div class="article ">
+            <a href="#" class="ui-link">
+                <img src="{{value.pic[0].picAddr}}" alt="">
+                <p class="character">{{value.proName}}</p>
+                <p class="price">
+                    <span class="red">¥{{value.price}}</span>
+                    <del class="del">¥{{value.oldPrice}}</del>
+                </p>
+                <p class='num'>数量:{{value.num}}</p>
+                <button type="button" data-id='{{value.id}}' class="mui-btn mui-btn-primary product-buy">立即购买</button>
+            </a>
+        </div>
+        {{/each}} {{/if}}
+    </script>
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <script src="./js/product.js"></script>
+</body>
+
+</html>

@@ -39,6 +39,7 @@ $(function () {
                     list: arr
                 });
                 $('.search-bottom').html(html);
+                location = '/m/productList.html?search='+text;
             });
             return this;
         },

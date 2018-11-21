@@ -1,0 +1,103 @@
+@import 'base.less';
+#header {
+    display: flex;
+    .icon {
+        display: flex;
+        width: .45rem;
+        height: .45rem;
+        color: #fff;
+        font-size: .25rem;
+        align-items: center;
+        justify-content: center;
+    }
+    p {
+        font-size: .18rem;
+        height: 100%;
+        flex: 1;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: -0.1rem;
+    }
+}
+
+/* 商品列表 */
+
+#main {
+    height: 100%;
+    .search {
+        padding: .15rem;
+        form {
+            display: flex;
+            input {
+                // border-radius: .12rem;
+                border: 1px solid red;
+                height: .3rem;
+            }
+            .btn-search {
+                height: .3rem;
+                background-color: red;
+                color: #fff;
+                border: 0;
+                margin-left: -0.02rem;
+            }
+        }
+    }
+    ;
+    .productList {
+        display: flex;
+        background-color: #eeeeee;
+        padding: .05rem 0;
+        p {
+            flex: 1;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+    }
+    .product-box {
+        height: 100%;
+        position: relative;
+    }
+    /* 商品展示 */
+    .product-Pay {
+        display: flex;
+        padding: .1rem .05rem 0;
+        flex-wrap: wrap;
+        .article {
+            width: 48%;
+            border: .01rem solid #e6e6e6;
+            margin-right: .1rem;
+            padding-bottom: .08rem;
+            margin-bottom: .1rem;
+            .num {
+                display: flex;
+                justify-content: center;
+            }
+        }
+        .character {
+            height: .84rem;
+        }
+        .article:nth-child(2n) {
+            margin-right: 0;
+        }
+        a {
+            display: flex;
+            flex-direction: column;
+            .price {
+                display: flex;
+                justify-content: center;
+                .red {
+                    color: red;
+                }
+                .del {
+                    color: #d6d6d6;
+                }
+            }
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
