@@ -55,12 +55,12 @@
                     alt="">
                 <span>分类</span>
             </a>
-            <a href="">
+            <a href="./shoppingCat.html">
                 <img src="http://m.img.letao.com:80/picture//website/ff80808157ffc1c2015800534d4c0000/2016/2fb1c089cbd749e5ba6bec6cec625727.png"
                     alt="./shoppingCat.html">
                 <span>购物车</span>
             </a>
-            <a href="">
+            <a href="./merber.html">
                 <img src="http://m.img.letao.com:80/picture//website/ff80808157ffc1c2015800534d4c0000/2016/c3b424f1c55b469c88677cf70d6efe7a.png"
                     alt="">
                 <span>会员中心</span>
@@ -72,10 +72,10 @@
 
     <script type="text/html" id="searchTpl">
         {{each list value index}}
-        <div class="mui-card-footer">
+        <a class="mui-card-footer" href='/m/productList.html?search={{value}}'>
             <span>{{value}}</span>
             <i class="mui-icon mui-icon-closeempty btn-del" data-id='{{index}}'></i>
-        </div>
+        </a>
         {{/each}}
     </script>
     <script src="./lib/zepto/zepto.min.js"></script>

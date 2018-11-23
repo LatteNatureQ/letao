@@ -1,6 +1,7 @@
 $(function () {
     /* 获取验证码逻辑 */
     var vCode;
+    
     $('.btn-getvCode').on('tap', function () {
         if (!$('.user-tel').val()) {
             mui.alert('请先输入手机号码', '温馨提示', '确定');
@@ -41,7 +42,6 @@ $(function () {
                 mui.alert('两次密码输入不一致', '温馨提示', '确定');
                 return false;
             }
-            // console.log(vCode);
             $('.btn-register').on('tap', function () {
                 $.ajax({
                     url: '/user/register',
