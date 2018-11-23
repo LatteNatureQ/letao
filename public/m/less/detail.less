@@ -1,0 +1,125 @@
+@import 'base.less';
+p {
+    margin-bottom: 0;
+}
+
+#header {
+    display: flex;
+    height: .35rem;
+    .icon {
+        display: flex;
+        width: .45rem;
+        height: .45rem;
+        color: #fff;
+        font-size: .25rem;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: -5px;
+    }
+    .home {
+        width: .45rem;
+        height: .45rem;
+        display: block;
+        text-align: center;
+        line-height: .45rem;
+        position: absolute;
+        right: 0;
+        top: -5px;
+        color: #fff;
+    }
+    p {
+        font-size: .18rem;
+        height: 100%;
+        line-height: 0.18rem;
+        flex: 1;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: -0.1rem;
+    }
+}
+body {
+    padding-top: .35rem;
+    padding-bottom: .30rem;
+}
+#main {
+    position: relative;
+    height: 100%;
+    /* 商品详情 */
+    .detail-info {
+        font-size: .18rem;
+        /* 标题 */
+        .title {
+            padding: .05rem .1rem;
+            color: black;
+            border-bottom: .01rem solid #ccc;
+            .name {
+                font-size: .14rem;
+            }
+            .info {
+                font-size: .15rem;
+                color: #000;
+                font-weight: bold;
+            }
+        }
+        ;
+        /* 商品价格 */
+        .price {
+            padding: .05rem .1rem;
+            font-size: .18rem;
+            font-weight: bold;
+            color: black;
+            border-bottom: .01rem solid #ccc;
+            span {
+                color: red;
+                font-size: .22rem;
+            }
+            del {
+                color: #ccc;
+            }
+        }
+        /* 商品尺码 */
+        .size {
+            padding: .05rem .09rem;
+            border-bottom: .01rem solid #ccc;
+            span {
+                transform: translateY(-0.03rem);
+                display: inline-block;
+                font-size: .14rem;
+            }
+            button {
+                width: .3rem;
+                height: .3rem;
+                vertical-align: middle;
+                margin-bottom: .05rem;
+                padding: 0;
+            }
+        }
+        /* 商品选购数量 */
+        .num {
+            padding: .05rem .1rem;
+        }
+    }
+}
+/* 底部样式 */
+#footer {
+    height: .39rem;
+    background-color: #cccccc;
+    // display: flex;
+    .shop-cart {
+        font-size: .2rem;
+        line-height: .33rem;
+        text-align: center;
+        color: black;
+        display: block;
+    }
+    .mui-col-xs-5 {
+        padding: 0 .1rem;
+        padding-top: .01rem;
+    }
+    .mui-btn {
+        width: 100%;
+    }
+}

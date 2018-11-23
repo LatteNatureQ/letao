@@ -1,6 +1,9 @@
 @import 'base.less';
+/* 头部区域 */
+
 #header {
     display: flex;
+    color: #fff;
     .icon {
         display: flex;
         width: .45rem;
@@ -23,31 +26,27 @@
     }
 }
 
+/* 主体区域 */
+
 #main {
-    .search {
-        padding: .15rem;
-        form {
-            display: flex;
-            input {
-                // border-radius: .12rem;
-                border: 1px solid red;
-                height: .3rem;
-            }
-            .btn-search {
-                height: .3rem;
-                background-color: red;
-                color: #fff;
-                border: 0;
-                margin-left: -0.02rem;
-            }
-        }
-    }
     .mui-card {
         span {
             font-size: .14rem;
         }
         .search-remove {
             font-size: .14rem;
+        }
+    }
+    ;
+    .card-icon {
+        display: flex;
+        flex-direction: column;
+    }
+    .merber-footer .mui-card-footer {
+        display: flex;
+        justify-content: center;
+        button {
+            width: 3rem;
         }
     }
 }

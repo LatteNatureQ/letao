@@ -9,7 +9,7 @@ $(function () {
         };
         $('.search-text').val('');
         refresh(text);
-    })
+    });
     /* 排序逻辑 */
     $('.order').on('tap', function () {
         var price = $(this).data('price');
@@ -24,6 +24,12 @@ $(function () {
             $(this).data('num', num);
             refresh(productName, '', num);
         }
+    });
+    /* 跳转到详情页 */
+    $('.product-Pay').on('tap', '.product-buy', function () {
+        var id = $(this).data('id');
+        // console.log(id);
+        location = '/m/detail.html?id=' + id;
     })
 })
 var page = 1;

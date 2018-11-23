@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./less/login.css">
+    <style>
+        input {
+            font-size: .14rem;
+        }
+        .btn-register {
+            width: 95%;
+        }
+        .verify {
+            position: relative;
+        }
+        .btn-getvCode {
+            position: absolute;
+            right: 0;
+            width: 30%!important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header id="header">
+        <a class="mui-icon mui-icon-arrowleft icon" href="javascript:history.back()"></a>
+        <p>注册中心</p>
+    </header>
+    <main id="main">
+        <form class="mui-input-group">
+            <div class="mui-input-row">
+                <label>用户名</label>
+                <input type="text" class="mui-input-clear user-name" placeholder="请输入用户名">
+            </div>
+            <div class="mui-input-row">
+                <label>手机</label>
+                <input type="tel" value="13513513513" class="mui-input-clear user-tel" placeholder="请输入手机号">
+            </div>
+            <div class="mui-input-row">
+                <label>密码</label>
+                <input type="password" class="mui-input-password user-password1" placeholder="请输入密码">
+            </div>
+            <div class="mui-input-row">
+                <label>确认密码</label>
+                <input type="password" class="mui-input-password user-password2" placeholder="请确认密码">
+            </div>
+            <div class="mui-input-row verify">
+                <label>验证码</label>
+                <input type="text" class="mui-input-clear user-code" placeholder="请输入验证码">
+                <button type="button" class="mui-btn mui-btn-danger btn-getvCode">获取验证码</button>
+            </div>
+            <div class="mui-button-row">
+                <button type="button" class="mui-btn mui-btn-danger btn-register">注册</button>
+            </div>
+
+        </form>
+    </main>
+    <footer id="footer">
+        <div class="footer-nav">
+            <a href="./index.html">
+                <img src="http://m.img.letao.com:80/picture//website/ff80808157ffc1c2015800534d4c0000/2018/f9c6394642b14ff5b19d84fdfba71b4b.png"
+                    alt="">
+                <span>首页</span>
+            </a>
+            <a href="./category.html">
+                <img src="http://m.img.letao.com:80/picture//website/ff80808157ffc1c2015800534d4c0000/2016/63126e837b424147b02d6d95d4106f5d.png"
+                    alt="">
+                <span>分类</span>
+            </a>
+            <a href="./shoppingCat.html">
+                <img src="http://m.img.letao.com:80/picture//website/ff80808157ffc1c2015800534d4c0000/2016/2fb1c089cbd749e5ba6bec6cec625727.png"
+                    alt="">
+                <span>购物车</span>
+            </a>
+            <a href="./merber.html">
+                <img src="http://m.img.letao.com:80/picture//website/ff80808157ffc1c2015800534d4c0000/2016/c3b424f1c55b469c88677cf70d6efe7a.png"
+                    alt="">
+                <span>会员中心</span>
+            </a>
+        </div>
+    </footer>
+    <script src="./lib/mui/js/mui.js"></script>
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <script src="./js/register.js"></script>
+</body>
+
+</html>

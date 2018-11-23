@@ -105,26 +105,3 @@ ul {
   justify-content: center;
   margin-left: -0.1rem;
 }
-#main .search {
-  padding: .15rem;
-}
-#main .search form {
-  display: flex;
-}
-#main .search form input {
-  border: 1px solid red;
-  height: .3rem;
-}
-#main .search form .btn-search {
-  height: .3rem;
-  background-color: red;
-  color: #fff;
-  border: 0;
-  margin-left: -0.02rem;
-}
-#main .mui-card span {
-  font-size: .14rem;
-}
-#main .mui-card .search-remove {
-  font-size: .14rem;
-}

@@ -82,6 +82,7 @@ ul {
   height: .22rem;
   width: .22rem;
 }
+/* 购物车头部样式 */
 #header {
   display: flex;
 }
@@ -95,6 +96,9 @@ ul {
   justify-content: center;
   position: absolute;
 }
+#header .icon.icon-refresh {
+  right: 0;
+}
 #header p {
   font-size: .18rem;
   height: 100%;
@@ -105,26 +109,60 @@ ul {
   justify-content: center;
   margin-left: -0.1rem;
 }
-#main .search {
-  padding: .15rem;
+/* 购物车主体区域 */
+#main {
+  position: relative;
+  height: 100%;
 }
-#main .search form {
+#main .red {
+  color: red;
+}
+#main .del {
+  color: #ccc;
+}
+#main .shopping-img {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-#main .search form input {
-  border: 1px solid red;
-  height: .3rem;
+#main .shopping-img img {
+  width: .6rem;
+  height: .6rem;
 }
-#main .search form .btn-search {
-  height: .3rem;
-  background-color: red;
-  color: #fff;
-  border: 0;
-  margin-left: -0.02rem;
+#main .shoe-size {
+  position: relative;
 }
-#main .mui-card span {
-  font-size: .14rem;
+#main .shopping-num {
+  position: absolute;
+  right: 0;
 }
-#main .mui-card .search-remove {
-  font-size: .14rem;
+#main .shopping-order {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: .01rem solid #cccccc;
+  padding-left: .2rem;
+}
+#main .shopping-order p {
+  color: red;
+  font-weight: bold;
+}
+p {
+  margin: 0;
+}
+.shopping-order {
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  bottom: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: .01rem solid #cccccc;
+  padding-left: .2rem;
+  background-color: #fff;
+}
+.shopping-order p {
+  color: red;
+  font-weight: bold;
 }

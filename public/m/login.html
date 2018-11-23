@@ -8,40 +8,30 @@
     <title>Document</title>
     <link rel="stylesheet" href="./lib/mui/css/mui.css">
     <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
-    <link rel="stylesheet" href="./less/search.css">
+    <link rel="stylesheet" href="./less/login.css">
 </head>
 
 <body>
     <!-- 头部区域 -->
     <header id="header">
         <a class="mui-icon mui-icon-arrowleft icon" href="javascript:history.back()"></a>
-        <p>搜索中心</p>
+        <p>登录中心</p>
     </header>
     <main id="main">
-        <div class="search">
-            <form action="#">
-                <input class="search-text" type="text" placeholder="请输入商品名称">
-                <button type="button" class="mui-btn mui-btn-primary btn-search">确认</button>
-            </form>
-        </div>
-        <div class="mui-card">
-            <!--页眉，放置标题-->
-            <div class="mui-card-header">
-                <span>搜索历史</span>
-                <div class="search-remove">
-                    <i class="fa fa-trash">清空记录</i>
-                </div>
-
+        <form class="mui-input-group">
+            <div class="mui-input-row">
+                <label>用户名</label>
+                <input type="text" class="mui-input-clear user-name" placeholder="请输入用户名">
             </div>
-            <!--页脚，放置补充信息或支持的操作-->
-            <div class="search-bottom">
-                <div class="mui-card-footer">
-                    <span>5555</span>
-                    <i class="mui-icon mui-icon-closeempty"></i>
-                </div>
+            <div class="mui-input-row">
+                <label>密码</label>
+                <input type="password" class="mui-input-password user-password" placeholder="请输入密码">
             </div>
-
-        </div>
+            <div class="mui-button-row">
+                <button type="button" class="mui-btn mui-btn-primary btn-login">登录</button>
+                <button type="button" class="mui-btn mui-btn-danger btn-register">免费注册</button>
+            </div>
+        </form>
     </main>
     <footer id="footer">
         <div class="footer-nav">
@@ -55,31 +45,21 @@
                     alt="">
                 <span>分类</span>
             </a>
-            <a href="">
+            <a href="./shoppingCat.html">
                 <img src="http://m.img.letao.com:80/picture//website/ff80808157ffc1c2015800534d4c0000/2016/2fb1c089cbd749e5ba6bec6cec625727.png"
-                    alt="./shoppingCat.html">
+                    alt="">
                 <span>购物车</span>
             </a>
             <a href="">
                 <img src="http://m.img.letao.com:80/picture//website/ff80808157ffc1c2015800534d4c0000/2016/c3b424f1c55b469c88677cf70d6efe7a.png"
-                    alt="">
+                    alt="./merber.html">
                 <span>会员中心</span>
             </a>
         </div>
     </footer>
     <script src="./lib/mui/js/mui.js"></script>
-    <script src="./lib/artTemplate/template-web.js"></script>
-
-    <script type="text/html" id="searchTpl">
-        {{each list value index}}
-        <div class="mui-card-footer">
-            <span>{{value}}</span>
-            <i class="mui-icon mui-icon-closeempty btn-del" data-id='{{index}}'></i>
-        </div>
-        {{/each}}
-    </script>
     <script src="./lib/zepto/zepto.min.js"></script>
-    <script src="./js/search.js"></script>
+    <script src="./js/login.js"></script>
 </body>
 
 </html>

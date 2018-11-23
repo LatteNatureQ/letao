@@ -1,0 +1,205 @@
+html {
+  font-size: 100px;
+}
+body {
+  font-size: 0.14rem;
+  background-color: #fff;
+}
+img {
+  vertical-align: middle;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  padding-top: .39rem;
+  padding-bottom: .48rem;
+}
+body {
+  overflow: hidden;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* 头部区域 */
+#header {
+  height: .45rem;
+  background-color: #e6002d;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+#header img {
+  height: .32rem;
+  margin-top: .05rem;
+}
+#header span {
+  line-height: .45rem;
+  font-size: .18rem;
+  color: #fff;
+}
+#header .search {
+  display: block;
+  position: absolute;
+  width: .45rem;
+  height: .45rem;
+  right: 0;
+  top: 0;
+  color: #fff;
+  line-height: .45rem;
+}
+/* 底部区域 */
+#footer {
+  width: 100%;
+  height: .48rem;
+  background-color: #4c4c4c;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding-top: .02rem;
+}
+#footer .footer-nav {
+  display: flex;
+}
+#footer .footer-nav a {
+  flex: 1;
+  height: .48rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+#footer .footer-nav a span {
+  font-size: .12rem;
+}
+#footer .footer-nav a img {
+  height: .22rem;
+  width: .22rem;
+}
+p {
+  margin-bottom: 0;
+}
+#header {
+  display: flex;
+  height: .35rem;
+}
+#header .icon {
+  display: flex;
+  width: .45rem;
+  height: .45rem;
+  color: #fff;
+  font-size: .25rem;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -5px;
+}
+#header .home {
+  width: .45rem;
+  height: .45rem;
+  display: block;
+  text-align: center;
+  line-height: .45rem;
+  position: absolute;
+  right: 0;
+  top: -5px;
+  color: #fff;
+}
+#header p {
+  font-size: .18rem;
+  height: 100%;
+  line-height: 0.18rem;
+  flex: 1;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -0.1rem;
+}
+body {
+  padding-top: .35rem;
+  padding-bottom: .30rem;
+}
+#main {
+  position: relative;
+  height: 100%;
+  /* 商品详情 */
+}
+#main .detail-info {
+  font-size: .18rem;
+  /* 标题 */
+  /* 商品价格 */
+  /* 商品尺码 */
+  /* 商品选购数量 */
+}
+#main .detail-info .title {
+  padding: .05rem .1rem;
+  color: black;
+  border-bottom: .01rem solid #ccc;
+}
+#main .detail-info .title .name {
+  font-size: .14rem;
+}
+#main .detail-info .title .info {
+  font-size: .15rem;
+  color: #000;
+  font-weight: bold;
+}
+#main .detail-info .price {
+  padding: .05rem .1rem;
+  font-size: .18rem;
+  font-weight: bold;
+  color: black;
+  border-bottom: .01rem solid #ccc;
+}
+#main .detail-info .price span {
+  color: red;
+  font-size: .22rem;
+}
+#main .detail-info .price del {
+  color: #ccc;
+}
+#main .detail-info .size {
+  padding: .05rem .09rem;
+  border-bottom: .01rem solid #ccc;
+}
+#main .detail-info .size span {
+  transform: translateY(-0.03rem);
+  display: inline-block;
+  font-size: .14rem;
+}
+#main .detail-info .size button {
+  width: .3rem;
+  height: .3rem;
+  vertical-align: middle;
+  margin-bottom: .05rem;
+  padding: 0;
+}
+#main .detail-info .num {
+  padding: .05rem .1rem;
+}
+/* 底部样式 */
+#footer {
+  height: .39rem;
+  background-color: #cccccc;
+}
+#footer .shop-cart {
+  font-size: .2rem;
+  line-height: .33rem;
+  text-align: center;
+  color: black;
+  display: block;
+}
+#footer .mui-col-xs-5 {
+  padding: 0 .1rem;
+  padding-top: .01rem;
+}
+#footer .mui-btn {
+  width: 100%;
+}

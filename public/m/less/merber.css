@@ -82,8 +82,10 @@ ul {
   height: .22rem;
   width: .22rem;
 }
+/* 头部区域 */
 #header {
   display: flex;
+  color: #fff;
 }
 #header .icon {
   display: flex;
@@ -105,26 +107,21 @@ ul {
   justify-content: center;
   margin-left: -0.1rem;
 }
-#main .search {
-  padding: .15rem;
-}
-#main .search form {
-  display: flex;
-}
-#main .search form input {
-  border: 1px solid red;
-  height: .3rem;
-}
-#main .search form .btn-search {
-  height: .3rem;
-  background-color: red;
-  color: #fff;
-  border: 0;
-  margin-left: -0.02rem;
-}
+/* 主体区域 */
 #main .mui-card span {
   font-size: .14rem;
 }
 #main .mui-card .search-remove {
   font-size: .14rem;
+}
+#main .card-icon {
+  display: flex;
+  flex-direction: column;
+}
+#main .merber-footer .mui-card-footer {
+  display: flex;
+  justify-content: center;
+}
+#main .merber-footer .mui-card-footer button {
+  width: 3rem;
 }

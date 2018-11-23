@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./less/detail.css">
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header id="header">
+        <a class="mui-icon mui-icon-arrowleft icon" href="javascript:history.back()"></a>
+        <p>商品详情</p>
+        <a class="home fa fa-home" href="index.html" class="fa fa-home"></a>
+    </header>
+    <main id="main">
+        <div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <!--数据列表-->
+                <ul class="mui-table-view mui-table-view-chevron">
+                    <!-- 轮播图区域 -->
+                    <sction id="slide">
+                    </sction>
+                    <section class="detail-info">
+                        <p class="title">
+                            <span class="name">名称:</span>
+                            <span class="info">李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5球鞋</span>
+                        </p>
+                        <p class="price">价格:
+                            <span>¥499.1</span>
+                            <del>¥888.1</del>
+                        </p>
+                        <div class="size">
+                            <span>尺码:</span>
+                            <button type="button" class="mui-btn">35</button>
+                            <button type="button" class="mui-btn">36</button>
+                            <button type="button" class="mui-btn">37</button>
+                            <button type="button" class="mui-btn">38</button>
+                            <button type="button" class="mui-btn">39</button>
+                            <button type="button" class="mui-btn">40</button>
+                            <button type="button" class="mui-btn">41</button>
+                            <button type="button" class="mui-btn">42</button>
+                            <button type="button" class="mui-btn">43</button>
+                            <button type="button" class="mui-btn">42</button>
+                            <button type="button" class="mui-btn">43</button>
+                        </div>
+                        <div class="num">
+                            数量:
+                            <div class="mui-numbox" data-numbox-step='1' data-numbox-min='0' data-numbox-max='20'>
+                                <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                                <input class="mui-numbox-input" type="number" />
+                                <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                            </div>
+                            <span>剩余:20件</span>
+                        </div>
+                    </section>
+
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="mui-row">
+            <div class="mui-col-xs-2">
+                <a href="#" class="fa fa-shopping-cart shop-cart"></a>
+            </div>
+            <div class="mui-col-xs-5">
+                <button type="button" class="mui-btn mui-btn-danger btn-add-cart">加入购车</button>
+            </div>
+            <div class="mui-col-xs-5">
+                <button type="button" class="mui-btn mui-btn-warning">立即购买</button>
+            </div>
+        </div>
+    </footer>
+    <script src="./lib/mui/js/mui.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script type="text/html" id="imgTpl">
+        <div class="mui-slider">
+            <div class="mui-slider-group mui-slider-loop">
+                <!--支持循环，需要重复图片节点-->
+                <div class="mui-slider-item mui-slider-item-duplicate">
+                    <a href="#">
+                        <img src="{{pic[0].picAddr}}" />
+                    </a>
+                </div>
+                {{each pic value}}
+                <div class="mui-slider-item">
+                    <a href="#">
+                        <img src="{{value.picAddr}}" />
+                    </a>
+                </div>
+                {{/each}}
+                <!--支持循环，需要重复图片节点-->
+                <div class="mui-slider-item mui-slider-item-duplicate">
+                    <a href="#">
+                        <img src="{{pic[0].picAddr}}" />
+                    </a>
+                </div>
+            </div>
+            <div class="mui-slider-indicator">
+                {{each pic value index}} {{if index==0}}
+                <div class="mui-indicator mui-active"></div>
+                {{else}}
+                <div class="mui-indicator"></div>
+                {{/if}} {{/each}}
+            </div>
+        </div>
+    </script>
+    <script type="text/html" id="infoTpl">
+        <p class="title">
+            <span class="name">名称:</span>
+            <span class="info">{{proName}}</span>
+        </p>
+        <p class="price">价格:
+            <span>¥{{price}}</span>
+            <del>¥{{oldPrice}}</del>
+        </p>
+        <div class="size">
+            <span>尺码:</span>
+            {{each num1 value}}
+            <button type="button" data-num='{{value}}' class="mui-btn btn-active">{{value}}</button>
+            {{/each}}
+        </div>
+        <div class="num">
+            数量:
+            <div class="mui-numbox" data-numbox-step='1' data-numbox-min='0' data-numbox-max='{{num}}'>
+                <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                <input class="mui-numbox-input btn-num" type="number" value='0' />
+                <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+            </div>
+            <span>剩余:{{num}}件</span>
+        </div>
+    </script>
+
+
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <script src="../m/js/detail.js"></script>
+</body>
+
+</html>
+<script>
+    // $('body').siblings().addClass().removeClass()
+</script>
