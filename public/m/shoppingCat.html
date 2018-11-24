@@ -23,8 +23,8 @@
         <div id="refreshContainer" class="mui-content mui-scroll-wrapper">
             <div class="mui-scroll">
                 <!--数据列表-->
-                <ul class="mui-table-view mui-table-view-chevron">
-                    <div class="mui-card">
+                <ul class="mui-table-view mui-table-view-chevron uul">
+                    <li class="mui-card">
                         <!--页眉，放置标题-->
                         <div class="mui-card-header">
                             <div class="shopping-img">
@@ -44,7 +44,7 @@
                             </div>
                             <i class="fa fa-angle-right"></i>
                         </div>
-                    </div>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -54,7 +54,7 @@
             订单总额:￥
             <span class="price">0.00</span>
         </p>
-        <button type="button" class="mui-btn mui-btn-danger">生成订单</button>
+        <button type="button" class="mui-btn mui-btn-danger order">生成订单</button>
     </div>
     <footer id="footer">
         <div class="footer-nav">
@@ -85,25 +85,50 @@
     <script id="shoppingTpl" type="text/html">
         {{each data value}}
         <!--页眉，放置标题-->
-        <div class="mui-card-header">
-            <div class="shopping-img">
-                <img src="{{value.pic[0].picAddr}}" alt="">
-                <input value='{{value.price}}' data-num='{{value.num}}' type="checkbox" class="shopping-check">
+        <li class="mui-card mui-table-view-cell mui-transitioning">
+            <div class="mui-slider-right mui-disabled">
+                <a class="mui-btn mui-btn-blue btn-edit" data-id='{{value.id}}' data-info='{{value}}'>编辑</a>
+                <a class="mui-btn mui-btn-red btn-del" data-id='{{value.id}}'>删除</a>
             </div>
-            <div class="shopping-info">
-                <p>{{value.proName}}</p>
-                <p>
-                    <span class="red">¥{{value.price}}</span>
-                    <del class="del">¥{{value.oldPrice}}</del>
-                </p>
-                <p class="shoe-size">鞋码:
-                    <span>{{value.size}}</span>
-                    <span class="shopping-num">x{{value.num}}双</span>
-                </p>
+            <div class="mui-card-header mui-slider-handle">
+                <div class="shopping-img">
+                    <img src="{{value.pic[0].picAddr}}" alt="">
+                    <input value='{{value.price}}' data-num='{{value.num}}' type="checkbox" class="shopping-check">
+                </div>
+                <div class="shopping-info">
+                    <p>{{value.proName}}</p>
+                    <p>
+                        <span class="red">¥{{value.price}}</span>
+                        <del class="del">¥{{value.oldPrice}}</del>
+                    </p>
+                    <p class="shoe-size">鞋码:
+                        <span>{{value.size}}</span>
+                        <span class="shopping-num">x{{value.num}}双</span>
+                    </p>
+                </div>
+                <i class="fa fa-angle-right"></i>
             </div>
-            <i class="fa fa-angle-right"></i>
-        </div>
+        </li>
         {{/each}}
+    </script>
+    <script type="text/html" id="infoTpl">
+        <div class="size">
+            <span>尺码:</span>
+            {{each num1 value}} {{if value != size}}
+            <button type="button" data-num='{{value}}' class="mui-btn btn-active">{{value}}</button>
+            {{else}}
+            <button type="button" data-num='{{value}}' class="mui-btn btn-active active">{{value}}</button>
+            {{/if}} {{/each}}
+        </div>
+        <div class="num">
+            数量:
+            <div class="mui-numbox" data-numbox-step='1' data-numbox-min='0' data-numbox-max='20'>
+                <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                <input class="mui-numbox-input btn-num" type="number" value='{{num}}' />
+                <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+            </div>
+            <span>剩余:20件</span>
+        </div>
     </script>
     <script src="./lib/zepto/zepto.min.js"></script>
     <script src="./js/shoppingCat.js"></script>

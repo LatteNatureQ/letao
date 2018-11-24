@@ -1,5 +1,6 @@
 @import 'base.less';
 /* 购物车头部样式 */
+
 #header {
     display: flex;
     .icon {
@@ -47,6 +48,11 @@
             height: .6rem;
         }
     }
+    .mui-card {
+        position: relative;
+        overflow: hidden;
+        padding: 11px 15px;
+    }
     .shoe-size {
         position: relative;
     }
@@ -70,6 +76,7 @@
 p {
     margin: 0;
 }
+
 .shopping-order {
     position: fixed;
     width: 100%;
@@ -84,5 +91,17 @@ p {
     p {
         color: red;
         font-weight: bold;
+    }
+}
+.mui-popup {
+    width: 3rem;
+    .size {
+        .mui-btn {
+            margin-bottom: .05rem;
+            vertical-align: middle;
+        }
+    }
+    .btn-active.active {
+        background-color: skyblue;
     }
 }

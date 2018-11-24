@@ -129,6 +129,11 @@ ul {
   width: .6rem;
   height: .6rem;
 }
+#main .mui-card {
+  position: relative;
+  overflow: hidden;
+  padding: 11px 15px;
+}
 #main .shoe-size {
   position: relative;
 }
@@ -165,4 +170,14 @@ p {
 .shopping-order p {
   color: red;
   font-weight: bold;
+}
+.mui-popup {
+  width: 3rem;
+}
+.mui-popup .size .mui-btn {
+  margin-bottom: .05rem;
+  vertical-align: middle;
+}
+.mui-popup .btn-active.active {
+  background-color: skyblue;
 }

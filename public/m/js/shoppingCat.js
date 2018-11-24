@@ -12,47 +12,11 @@ $(function () {
     var pageSize = 5;
     var num = 0;
     /* 渲染数据 */
-    $.ajax({
-        url: '/cart/queryCartPaging',
-        dataType: 'json',
-        data: {
-            page: page,
-            pageSize: pageSize
-        },
-        success: function (obj) {
-            console.log(obj);
-            var html = template('shoppingTpl', obj);
-            $('.mui-card').html(html);
-        }
-    });
+    refresh();
     /* 下拉刷新,上拉加载 */
     mui.init({
         pullRefresh: {
             container: "#refreshContainer", //下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
-            // down: {
-            //     height: 50, //可选,默认50.触发下拉刷新拖动距离,
-            //     auto: false, //可选,默认false.首次加载自动下拉刷新一次
-            //     contentdown: "下拉可以刷新", //可选，在下拉可刷新状态时，下拉刷新控件上显示的标题内容
-            //     contentover: "释放立即刷新", //可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
-            //     contentrefresh: "正在刷新...", //可选，正在刷新状态时，下拉刷新控件上显示的标题内容
-            //     callback: function () {
-            //         page = 1;
-            //         $.ajax({
-            //             url: '/cart/queryCartPaging',
-            //             dataType: 'json',
-            //             data: {
-            //                 page: page,
-            //                 pageSize: pageSize,
-            //             },
-            //             success: function (obj) {
-            //                 var html = template('shoppingTpl', obj);
-            //                 $('.mui-card').html(html);
-            //                 mui('#refreshContainer').pullRefresh().endPulldownToRefresh();
-            //                 mui('#refreshContainer').pullRefresh().refresh(true);
-            //             }
-            //         });
-            //     } //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
-            // },
             up: {
                 height: 50, //可选.默认50.触发上拉加载拖动距离
                 auto: false, //可选,默认false.自动上拉加载一次
@@ -69,22 +33,16 @@ $(function () {
                         },
                         success: function (obj) {
                             console.log(obj);
-                            console.log(page);
-                            console.log(pageSize);
-                            if(Array.isArray(obj)){
+                            if (Array.isArray(obj)) {
                                 obj = {
-                                    data:[]
+                                    data: []
                                 }
                             }
                             var html = template('shoppingTpl', obj);
-                            $('.mui-card').append(html);
-                            // if (page * pageSize >= obj.count) {
-                            //     mui('#refreshContainer').pullRefresh().endPullupToRefresh(true);
-                            //     // return false;
-                            // }
+                            $('.uul').append(html);
                             if (obj.data.length > 0) {
                                 mui('#refreshContainer').pullRefresh().endPullupToRefresh();
-                            }else {
+                            } else {
                                 mui('#refreshContainer').pullRefresh().endPullupToRefresh(true);
                             }
                         }
@@ -95,13 +53,98 @@ $(function () {
     });
     /* 订单总额 */
     $('#main').on('tap', '.shopping-check', function () {
-        // console.log($(this).val());
         if (!$(this).prop('checked')) {
-            num += $(this).val() * $(this).data('num') - 0;
+            num += $(this).val() * $(this).data('num');
         } else {
-            num -= $(this).val() * $(this).data('num') - 0;
+            num -= $(this).val() * $(this).data('num');
         }
         $('.price').text(num.toFixed(2));
     });
-
+    /* 删除购物车记录 */
+    $('#main').on('tap', '.btn-del', function () {
+        var id = $(this).data('id');
+        var elem = this;
+        var li = elem.parentNode.parentNode;
+        mui.confirm('是否删除', '温馨提示', ['确定', '取消'], function (e) {
+            if (e.index == 0) {
+                $.ajax({
+                    url: '/cart/deleteCart',
+                    data: {
+                        id: id
+                    },
+                    success: function () {
+                        refresh();
+                    }
+                })
+            } else {
+                mui.swipeoutClose(li);
+            }
+        })
+    });
+    /* 编辑购物车 */
+    $('#main').on('tap', '.btn-edit', function () {
+        var elem = this;
+        var li = elem.parentNode.parentNode;
+        var obj = $(this).data('info');
+        var id = $(this).data('id');
+        console.log(obj);
+        console.log(id);
+        var num = obj.productSize.split('-');
+        var arr = [];
+        console.log(num);
+        for (var i = num[0] - 0; i <= num[1] - 0; i++) {
+            arr.push(i);
+        };
+        obj.num1 = arr;
+        var html = template('infoTpl', obj);
+        html = html.replace(/\r|\n/g, '');
+        mui.confirm(html, '编辑商品标题', ['确定', '取消'], function (e) {
+            console.log(e);
+            if (e.index == 0) {
+                var num = $('.btn-num').val();
+                var size = $('.btn-active.active').data('num');
+                $.ajax({
+                    url: '/cart/updateCart',
+                    type: 'post',
+                    data: {
+                        id: id,
+                        size: size,
+                        num: num
+                    },
+                    success: function (obj) {
+                        if (obj.success) {
+                            refresh();
+                        }
+                    }
+                })
+            } else {
+                mui.swipeoutClose(li);
+            }
+        })
+        mui('.mui-numbox').numbox();
+        /* 按钮点击排它逻辑 */
+        $('.mui-popup').on('tap', '.btn-active', function () {
+            console.log(this);
+            $(this).addClass('active').siblings().removeClass('active');
+        });
+    })
 })
+
+/* 渲染购物车数据封装 */
+function refresh() {
+    page = 1;
+    pageSize = 5;
+    $.ajax({
+        url: '/cart/queryCartPaging',
+        dataType: 'json',
+        data: {
+            page: page,
+            pageSize: pageSize
+        },
+        success: function (obj) {
+            console.log(obj);
+            var html = template('shoppingTpl', obj);
+            $('.uul').html(html);
+        }
+    });
+}

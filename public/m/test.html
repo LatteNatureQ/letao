@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        这是一个div标签
+    </div>
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <script>
+        $(function () {
+            // $('div').on('click', function () {
+            //     console.log(111);
+            // })
+            $('div').on('tap', function () {
+                console.log(111);
+            })
+        })
+    </script>
+</body>
+
+</html>
