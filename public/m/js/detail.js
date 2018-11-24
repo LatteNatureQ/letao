@@ -82,10 +82,10 @@ $(function () {
                 } else {
                     mui.confirm('是否跳转到购物车查看', '温馨提示', ['yes', 'no'], function (e) {
                         $.ajax({
-                            url: '/cart/updateCart',
+                            url: '/cart/addCart',
                             type: 'post',
                             data: {
-                                id: productId,
+                                productId: productId,
                                 size: size,
                                 num: num
                             },

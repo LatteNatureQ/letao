@@ -69,15 +69,24 @@ $(function () {
                         },
                         success: function (obj) {
                             console.log(obj);
+                            console.log(page);
+                            console.log(pageSize);
+                            if(Array.isArray(obj)){
+                                obj = {
+                                    data:[]
+                                }
+                            }
                             var html = template('shoppingTpl', obj);
                             $('.mui-card').append(html);
-                            if (page * pageSize >= obj.count) {
-                                mui('#refreshContainer').pullRefresh().endPullupToRefresh(true);
-                                return false;
-                            }
+                            // if (page * pageSize >= obj.count) {
+                            //     mui('#refreshContainer').pullRefresh().endPullupToRefresh(true);
+                            //     // return false;
+                            // }
                             if (obj.data.length > 0) {
                                 mui('#refreshContainer').pullRefresh().endPullupToRefresh();
-                            };
+                            }else {
+                                mui('#refreshContainer').pullRefresh().endPullupToRefresh(true);
+                            }
                         }
                     });
                 } //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
