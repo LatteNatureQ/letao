@@ -114,11 +114,13 @@
     <script type="text/html" id="infoTpl">
         <div class="size">
             <span>尺码:</span>
-            {{each num1 value}} {{if value != size}}
+            {{each num1 value}} 
+            {{if value != size}}
             <button type="button" data-num='{{value}}' class="mui-btn btn-active">{{value}}</button>
             {{else}}
             <button type="button" data-num='{{value}}' class="mui-btn btn-active active">{{value}}</button>
-            {{/if}} {{/each}}
+            {{/if}} 
+            {{/each}}
         </div>
         <div class="num">
             数量:

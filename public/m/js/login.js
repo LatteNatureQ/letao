@@ -22,7 +22,9 @@ $(function () {
                 if (obj.success == true) {
                     sessionStorage.setItem('userName', userName);
                     sessionStorage.setItem('passWord', userPassword);
-                    history.back();
+                    var url = getQueryString('website');
+                    location = url;
+                    // history.back();
                 } else if (obj.error == 403) {
                     mui.alert('用户名或密码错误', '温馨提示', '确定');
                 };
@@ -30,7 +32,14 @@ $(function () {
         })
     });
     /* 注册逻辑 */
-    $('.btn-register').on('tap',function(){
+    $('.btn-register').on('tap', function () {
         location = '/m/register.html';
     })
 })
+/* 查询url参数的封装 */
+function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return decodeURI(r[2]);
+    return null;
+}

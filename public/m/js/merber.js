@@ -4,7 +4,7 @@ $(function () {
         url: '/user/queryUserMessage',
         success: function (obj) {
             if (obj.error == 400) {
-                location = '/m/login.html';
+                location = '/m/login.html?website='+location.href;
                 return false;
             }
             var html = template('userTpl', obj);
@@ -18,7 +18,7 @@ $(function () {
             success: function (obj) {
                 console.log(obj);
                 if (obj.success) {
-                    location = '/m/login.html';
+                    location = '/m/login.html?website='+location.href;
                 }
             }
         });
