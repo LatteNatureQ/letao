@@ -77,7 +77,7 @@ $(function () {
             url: '/user/queryUserMessage',
             success: function (obj) {
                 if (obj.error == 400) {
-                    location = '/m/login.html';
+                    location = '/m/login.html?website=' + location.href;
                     return false;
                 } else {
                     mui.confirm('是否跳转到购物车查看', '温馨提示', ['yes', 'no'], function (e) {
