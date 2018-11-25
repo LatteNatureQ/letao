@@ -5,6 +5,11 @@
 ```bash
 $ git clone https://github.com/LatteNatureQ/letao.git --depth 1
 ```
+## Preparation
+
+```bash
+Import database (letao-master->docs->letao初始化.sql)
+```
 
 ## Run it
 
