@@ -1,7 +1,6 @@
 $(function () {
     /* 获取验证码逻辑 */
     var vCode;
-    
     $('.btn-getvCode').on('tap', function () {
         if (!$('.user-tel').val()) {
             mui.alert('请先输入手机号码', '温馨提示', '确定');
@@ -14,7 +13,7 @@ $(function () {
                 }
             })
         }
-    })
+    });
     /* 注册逻辑 */
     $('.btn-register').on('tap', function () {
         var check = true;
@@ -26,7 +25,8 @@ $(function () {
                 check = false;
                 return false;
             }
-        }); //校验通过，继续执行业务逻辑 
+        });
+        //校验通过，继续执行业务逻辑 
         if (check) {
             var userName = $('.user-name').val();
             var userTel = $('.user-tel').val();
@@ -42,27 +42,26 @@ $(function () {
                 mui.alert('两次密码输入不一致', '温馨提示', '确定');
                 return false;
             }
-            $('.btn-register').on('tap', function () {
-                $.ajax({
-                    url: '/user/register',
-                    type: 'post',
-                    data: {
-                        username: userName,
-                        password: firstPassword,
-                        mobile: userTel,
-                        vCode: vCode,
-                    },
-                    success: function (obj) {
-                        if (obj.success) {
-                            history.back();
-                            sessionStorage.setItem('user', userName);
-                            sessionStorage.setItem('pwd', firstPassword);
-                        } else {
-                            mui.alert('注册失败', '温馨提示', '确定');
-                        }
+            /* 校验注册逻辑 */
+            $.ajax({
+                url: '/user/register',
+                type: 'post',
+                data: {
+                    username: userName,
+                    password: firstPassword,
+                    mobile: userTel,
+                    vCode: vCode,
+                },
+                success: function (obj) {
+                    if (obj.success) {
+                        history.back();
+                        sessionStorage.setItem('user', userName);
+                        sessionStorage.setItem('pwd', firstPassword);
+                    } else {
+                        mui.alert('注册失败', '温馨提示', '确定');
                     }
-                })
+                }
             })
         }
-    })
+    });
 })
