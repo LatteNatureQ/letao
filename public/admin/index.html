@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
+    <link rel="stylesheet" href="./less/index.css">
+</head>
+
+<body>
+    <main id="main">
+        <!-- 主体左侧 -->
+        <section class="left">
+            <img src="./images/1.png" alt="">
+            <p>刘旭涛</p>
+            <div class="list-group">
+                <a href="#" class="list-group-item active">用户管理</a>
+                <a class="btn btn-primary fl" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    分类管理
+                </a>
+                <div class="collapse" id="collapseExample">
+                    <div class="well">
+                        <a href="javascript:;">一级分类</a>
+                        <a href="javascript:;">二级分类</a>
+                    </div>
+                </div>
+                <a href="#" class="list-group-item">商品管理</a>
+            </div>
+        </section>
+        <!-- 主体右侧 -->
+        <section class="right">
+            <section class="header">
+                <a href="#" class="fa fa-navicon pull-left nav"></a>
+                <a href="#" class="fa fa-sign-out pull-right logout">退出</a>
+            </section>
+            <div class="bs-example table-info" data-example-id="hoverable-table">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>用户名</th>
+                            <th>电话</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tb">
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>itcast</td>
+                            <td>13232323232</td>
+                            <td>已启用</td>
+                            <td>
+                                <button type="button" class="btn btn-danger">禁用</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <ul id="page"></ul>
+        </section>
+    </main>
+    <script src="./lib/jquery/jquery.min.js"></script>
+    <script src="./lib/jquery/jquery.pagination.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap-paginator.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script type="text/html" id="tableTpl">
+        {{each rows value}}
+        <tr>
+            <th scope="row">{{value.id}}</th>
+            <td>{{value.username}}</td>
+            <td>{{value.mobile}}</td>
+            {{if value.isDelete == 1}}
+            <td>已启用</td>
+            {{else}}
+            <td>已禁用</td>
+            {{/if}}
+            <td>
+                {{if value.isDelete == 1}}
+                <button type="button" data-delete='{{value.isDelete}}' data-id='{{value.id}}' class="btn-status btn btn-danger">禁用</button>
+                {{else}}
+                <button type="button" data-delete='{{value.isDelete}}' data-id='{{value.id}}' class="btn-status btn btn-success">启用</button>
+                {{/if}}
+            </td>
+        </tr>
+        {{/each}}
+    </script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

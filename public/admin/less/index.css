@@ -1,0 +1,100 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+#main {
+  height: 100%;
+  display: flex;
+}
+#main .left {
+  width: 180px;
+  height: 100%;
+  background-color: #243443;
+  padding-top: 30px;
+}
+#main .left img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  border: 5px solid #ccc;
+}
+#main .left p {
+  font-size: 18px;
+  color: #ccc;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 60px;
+}
+#main .left .well {
+  background-color: #243443;
+  border: 0;
+  margin: 0;
+}
+#main .left .well a {
+  background-color: #243443;
+  text-align: center;
+  margin-bottom: 10px;
+}
+#main .left a {
+  background-color: #2f4050;
+  color: #ccc;
+  border: 0;
+  display: block;
+}
+#main .left a.active {
+  background-color: #243443;
+}
+#main .left a.fl {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+  text-align: left;
+}
+#main .right {
+  flex: 1;
+  background-color: #f5f5f5;
+}
+#main .right .pagination {
+  margin: 0;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+#main .right .table-info {
+  padding: 20px 10px 0px;
+  background-color: #fff;
+}
+#main .right table {
+  margin: 0;
+}
+#main .right .header {
+  background-color: #fff;
+  height: 58px;
+  margin-bottom: 30px;
+  font-size: 25px;
+  padding: 10px;
+}
+#main .right .header .nav {
+  padding: 5px;
+  background-color: #5cb85c;
+  color: #fff;
+}
+#main .right .header .logout {
+  margin-right: 10px;
+  margin-top: 10px;
+}
+#main .right th,
+#main .right td {
+  text-align: center;
+  border: 1px solid #dddddd;
+}
+#main .right td {
+  border: 1px solid #dddddd;
+  height: 100px;
+}
